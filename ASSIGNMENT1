@@ -1,0 +1,16 @@
+Assignment 1         //file name starts with ASS1
+
+1. Write an 8086 Assembly Language Program to subtract two 8-bit signed integers. The
+  numbers can be stored in data segment.
+
+2. Write an 8086 Assembly Language Program to print your name as a string. Name can be
+  stored in the data segment as a string.
+
+3. Write an 8086 Assembly Language Program to reverse a string using stack and display
+  the result.
+
+4. Write an 8086 Assembly Language Program which will ask for a number and the no. will
+  be taken from keyboard. Print the number in decimal, binary and hexadecimal format.
+
+5. Now modify the program in Q2 so that it will ask for your name and takes the input from
+  key board.
