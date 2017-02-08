@@ -1,4 +1,4 @@
-;ques2
+;Write an 8086 Assembly Language Program to print your name as a string. Name can be stored in the data segment as a string.
 
 .model small
 .stack 100H
