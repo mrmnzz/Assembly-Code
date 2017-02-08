@@ -1,0 +1,27 @@
+;ASSIGNMENT 1
+;QUESTION 5
+;Now modify the program in Q2 so that it will ask for your name and takes the input from key board.
+
+.MODEL SMALL
+.STACK 100H
+
+.DATA
+STR DB 30 DUP('$')	;ARRAY_SIZE= 30    EACH VALUE IS DUP $ AS SHOWN HERE ==> "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+MSG DB 'ENTER A STRING TO PRINT: $'
+
+.CODE
+MAIN PROC
+	MOV AX,@DATA
+	MOV DS,AX
+	LEA DX,MSG	;PRINT MSG
+	MOV AH,09H
+	INT 21H
+	LEA DX,STR	;COPY ADDRESS OF STR TO STACK "DX"
+	MOV AH,3FH	;TO TAKE INPUT FROM KEYBOARD TO STACK "DX"
+	INT 21H
+	MOV AH,09H
+	INT 21H
+	MOV AH,4CH
+	INT 21H
+MAIN ENDP
+END MAIN
