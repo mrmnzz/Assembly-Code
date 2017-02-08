@@ -1,0 +1,38 @@
+;ASSIGNMENT 1
+;QUESTION 3
+;Write an 8086 Assembly Language Program to reverse a string using stack and display the result.
+
+.MODEL SMALL
+.STACK 100H
+
+.DATA
+STR DB 'HELLO$'
+COUNT DB 0
+
+.CODE
+MAIN PROC
+	MOV AX,@DATA
+	MOV DS,AX
+	MOV BL,COUNT
+	LEA SI,STR
+PUSH1:
+	MOV CX,[SI]
+	CMP CL,'$'
+	JE POP1
+	PUSH CX
+	INC SI
+	INC BL
+	JMP PUSH1
+POP1:
+	CMP BL,0
+	JE EXIT1
+	POP DX
+	MOV AH, 02H
+	INT 21H
+	DEC BL
+	JMP POP1
+EXIT1:
+	MOV AH, 4CH
+	INT 21H
+MAIN ENDP
+END MAIN
